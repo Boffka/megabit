@@ -1,0 +1,27 @@
+<div fxLayout="column" fxFlexFill style="padding: 24px;">
+  <h2 class="mat-title">Last Blocks</h2>
+  <div fxLayoutAlign="center center" style="height: 250px">
+    <mat-spinner *ngIf="!blocks.length>0" diameter="100"></mat-spinner>
+    <ngx-charts-advanced-pie-chart
+      *ngIf="blocks.length>0"
+      [view]="blocksView"
+      [scheme]="colorScheme"
+      [gradient]="true"
+      [results]="blocks">
+    </ngx-charts-advanced-pie-chart>
+  </div>
+  <div fxLayout="column">
+    <h2 class="mat-title">Pools allocation</h2>
+    <ngx-charts-bar-horizontal
+      [view]="poolsView"
+      [scheme]="colorScheme"
+      [results]="poolsAllocation"
+      [gradient]="true"
+      [xAxis]="true"
+      [yAxis]="true"
+      [showXAxisLabel]="true"
+      [showYAxisLabel]="false"
+      [xAxisLabel]="xAxisLabel">
+    </ngx-charts-bar-horizontal>
+  </div>
+</div>

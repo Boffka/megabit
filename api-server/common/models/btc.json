@@ -1,0 +1,33 @@
+{
+  "name": "btc",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": false
+  },
+  "properties": {
+    "name": {"type":"string"}
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {},
+  "mixins": {
+    "FireLoop": true,
+    "TimeStamp": {
+      "required": false
+    },
+    "Stats": [
+      {
+        "method": "stats",
+        "endpoint": "/stats",
+        "description": "Statistical information for btc registers.",
+        "type": "model",
+        "count": {
+          "on": "createdAt",
+          "by": "index"
+        }
+      }
+    ]
+  }
+}

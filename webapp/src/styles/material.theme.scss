@@ -1,0 +1,14 @@
+@import '~@angular/material/theming';
+
+$custom-typography: mat-typography-config(
+  $font-family: 'Roboto, monospace',
+  $headline: mat-typography-level(32px, 48px, 700),
+  $body-1: mat-typography-level(16px, 24px, 500)
+);
+@include mat-core($custom-typography);
+@include mat-base-typography($custom-typography);
+$dark-primary: mat-palette($mat-light-blue);
+$dark-accent: mat-palette($mat-light-blue, A200, A100, A400);
+$dark-warn: mat-palette($mat-deep-orange);
+$dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+@include angular-material-theme($dark-theme);

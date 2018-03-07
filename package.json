@@ -1,0 +1,15 @@
+{
+  "name": "Megabit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "apisetup": "cd api-server/ && npm install",
+    "websetup": "cd webapp/ && npm install",
+    "apistart": "cd api-server/ && node server/server.js",
+    "webstart": "cd webapp/ && && ng serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENSED"
+}

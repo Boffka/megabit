@@ -1,0 +1,19 @@
+<mat-toolbar color="primary">
+  <span class="logo" routerLink="/">MEGABIT</span>
+  <span fxFlex></span>
+  <span class="mat-body-2">Unconfirmed transactions: {{ unconfirmedTransactions }}</span>
+  <span fxFlex></span>
+  <a routerLink="/dash" mat-button>Dash</a>
+  <a routerLink="/auth/register" mat-button *ngIf="!isLoggedIn()">SignUp</a>
+  <a routerLink="/auth/login" mat-button *ngIf="!isLoggedIn()">LogIn</a>
+  <button *ngIf="isLoggedIn()" mat-button [matMenuTriggerFor]="appMenu">
+    {{ getUsername() }}
+  </button>
+  <mat-menu #appMenu="matMenu">
+    <button mat-menu-item>Settings</button>
+    <button mat-menu-item (click)="logout()">Logout</button>
+  </mat-menu>
+</mat-toolbar>
+
+<router-outlet></router-outlet>
+
