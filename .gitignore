@@ -79,3 +79,4 @@ typings/
 .next
 
 /api-server/package-lock.json
+/webapp/package-lock.json
