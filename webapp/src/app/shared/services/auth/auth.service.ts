@@ -31,6 +31,7 @@ export class AuthService {
   signup(credentials) {
     return new Promise((resolve, reject) => {
       this.userApi.create(credentials).subscribe((data) => {
+        this.router.navigate(['/','auth','login'])
         resolve(data);
       }, reject);
     });
